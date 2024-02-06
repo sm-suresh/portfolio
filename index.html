@@ -20,9 +20,7 @@
             height: 100%;
         }
 
-        spline-viewer #logo {
-            display: none;
-        }
+
     </style>
 </head>
 
@@ -30,15 +28,6 @@
 
     <script type="module" src="https://unpkg.com/@splinetool/viewer@1.0.48/build/spline-viewer.js"></script>
     <spline-viewer url="https://prod.spline.design/RqX2MtJJJxkRTnxk/scene.splinecode"></spline-viewer>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            var logo = document.querySelector('spline-viewer #logo');
-            if (logo) {
-                logo.style.display = 'none';
-            }
-        });
-    </script>
 
 </body>
 
