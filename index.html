@@ -18,52 +18,13 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Choose a cool font */
         }
 
-        #loading {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: #1a1a1a;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 24px;
-        }
-
-        spline-viewer {
-            width: 100%;
-            height: 100%;
-            display: none; /* Hide initially */
-        }
-
-        #logo {
-            display: none;
-        }
     </style>
 </head>
 
 <body>
 
-    <div id="loading">Loading...</div>
-
     <script type="module" src="https://unpkg.com/@splinetool/viewer@1.0.48/build/spline-viewer.js"></script>
 <spline-viewer url="https://prod.spline.design/Fv3oEAqAKJ0o5gPY/scene.splinecode"></spline-viewer>
-
-    <script>
-        // Wait for the page to fully load
-        document.addEventListener('DOMContentLoaded', function () {
-            // Hide the loading screen
-            document.getElementById('loading').style.display = 'none';
-            // Show the spline-viewer
-            document.querySelector('spline-viewer').style.display = 'block';
-            // Hide the logo
-            var logo = document.querySelector('spline-viewer #logo');
-            if (logo) {
-                logo.style.display = 'none';
-            }
-        });
-    </script>
 
 </body>
 
