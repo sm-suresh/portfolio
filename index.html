@@ -15,52 +15,8 @@
 
 <body>
 
-    <script src="https://threejs.org/build/three.js"></script>
-    <script>
-        // Set up scene
-        const scene = new THREE.Scene();
-        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-        const renderer = new THREE.WebGLRenderer();
-        renderer.setSize(window.innerWidth, window.innerHeight);
-        document.body.appendChild(renderer.domElement);
-
-        // Create spline curve
-        const curve = new THREE.CatmullRomCurve3([
-            new THREE.Vector3(-5, 0, 0),
-            new THREE.Vector3(-2.5, 5, 0),
-            new THREE.Vector3(0, 0, 0),
-            new THREE.Vector3(2.5, -5, 0),
-            new THREE.Vector3(5, 0, 0),
-        ], false, 'catmullrom', 0.1);
-
-        const points = curve.getPoints(100);
-        const geometry = new THREE.BufferGeometry().setFromPoints(points);
-        const material = new THREE.LineBasicMaterial({ color: 0xff0000 });
-        const splineObject = new THREE.Line(geometry, material);
-        scene.add(splineObject);
-
-        // Set camera position
-        camera.position.z = 10;
-
-        // Animation loop
-        const animate = () => {
-            requestAnimationFrame(animate);
-
-            // Add your custom animations or updates here
-
-            renderer.render(scene, camera);
-        };
-
-        // Handle window resize
-        window.addEventListener('resize', () => {
-            camera.aspect = window.innerWidth / window.innerHeight;
-            camera.updateProjectionMatrix();
-            renderer.setSize(window.innerWidth, window.innerHeight);
-        });
-
-        // Start the animation loop
-        animate();
-    </script>
+    <script type="module" src="https://unpkg.com/@splinetool/viewer@1.0.48/build/spline-viewer.js"></script>
+    <spline-viewer url="https://prod.spline.design/RqX2MtJJJxkRTnxk/scene.splinecode"></spline-viewer>
 
 </body>
 
